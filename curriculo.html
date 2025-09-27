@@ -1,198 +1,190 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Camila Soares - CV</title>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    body { font-family: 'Roboto', Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
-    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; box-shadow: 0 0 15px rgba(0,0,0,0.1);}
-    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #1F4E79; padding-bottom: 10px;}
-    .header h1 { margin: 0; font-size: 28px; color: #1F4E79;}
-    .contact { text-align: right; font-size: 14px;}
-    .contact a { color: #1F4E79; text-decoration: none;}
-    .content { display: flex; margin-top: 30px;}
-    .left, .right { padding: 0 20px;}
-    .left { width: 30%; border-right: 2px solid #e0e0e0;}
-    .right { width: 70%;}
-    h2 { color: #1F4E79; font-size: 20px; margin-top: 20px; border-bottom: 2px solid #1F4E79; padding-bottom: 3px;}
-    h3 { font-size: 16px; margin-bottom: 5px;}
-    .job-title { font-weight: bold;}
-    .company { font-style: italic; color: #555; font-size: 14px; margin-bottom: 5px;}
-    ul { margin: 5px 0 15px 15px;}
-    .skills span { display: inline-block; background: #1F4E79; color: #fff; padding: 4px 8px; margin: 3px 3px 3px 0; border-radius: 4px; font-size: 12px;}
-    .languages li { margin-bottom: 5px;}
-    .icon { margin-right: 5px; color: #1F4E79;}
-    .lang-switch { margin-bottom: 15px; text-align: center;}
-    .lang-switch button { padding: 5px 10px; margin: 0 5px; cursor: pointer; border: none; border-radius: 4px; background: #1F4E79; color: #fff; font-weight: bold;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículo - Camila Soares Xavier da Silva</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    header a { color: #fff; text-decoration: none; margin: 0 5px; }
+    section {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+    }
+    h2 {
+      border-bottom: 2px solid #004080;
+      padding-bottom: 5px;
+      margin-top: 20px;
+    }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 8px; }
+    /* Tabs */
+    .tabs { display: flex; justify-content: center; margin-bottom: 20px; }
+    .tab-button {
+      padding: 10px 20px;
+      cursor: pointer;
+      border: none;
+      background: #ddd;
+      margin: 0 5px;
+      border-radius: 5px 5px 0 0;
+      font-weight: bold;
+    }
+    .tab-button.active { background: #004080; color: #fff; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Language Switch -->
-    <div class="lang-switch">
-        <button onclick="setLang('en')">English</button>
-        <button onclick="setLang('pt')">Português</button>
-    </div>
+<header>
+  <h1>Camila Soares Xavier da Silva</h1>
+  <p>
+    Recife – PE | (81) 99534-6681<br>
+    <a href="mailto:camilasoares1507@gmail.com">camilasoares1507@gmail.com</a> |
+    <a href="https://www.linkedin.com/in/camila-soares-3475027a/">LinkedIn</a> |
+    <a href="http://github.com/camila-soares">GitHub</a>
+  </p>
+  <p>Disponibilidade para viagens e/ou mudança de cidade</p>
+</header>
 
-    <!-- Header -->
-    <div class="header">
-        <h1>Camila Soares Xavier da Silva</h1>
-        <div class="contact">
-            <div><span class="icon">📍</span> Recife, PE, Brazil</div>
-            <div><span class="icon">📞</span> +55 81 99534-6681</div>
-            <div><span class="icon">✉️</span> <a href="mailto:camilasoares1507@gmail.com">camilasoares1507@gmail.com</a></div>
-            <div><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/camila-soares-3475027a/">LinkedIn</a> | <a href="http://github.com/camila-soares">GitHub</a></div>
-            <div><span class="icon">🌍</span> Willing to travel</div>
-        </div>
-    </div>
-
-    <div class="content">
-        <!-- Left Column -->
-        <div class="left">
-            <h2 id="skills-title">Skills</h2>
-            <div class="skills" id="skills">
-                <!-- Dynamic skills filled by JS -->
-            </div>
-
-            <h2 id="languages-title">Languages</h2>
-            <ul class="languages" id="languages-list"></ul>
-
-            <h2 id="education-title">Education</h2>
-            <p id="education"></p>
-        </div>
-
-        <!-- Right Column -->
-        <div class="right">
-            <h2 id="summary-title">Professional Summary</h2>
-            <p id="summary"></p>
-
-            <h2 id="experience-title">Professional Experience</h2>
-            <div id="experience"></div>
-        </div>
-    </div>
+<div class="tabs">
+  <button class="tab-button active" onclick="showTab('pt')">Português</button>
+  <button class="tab-button" onclick="showTab('en')">English</button>
 </div>
 
+<section>
+  <!-- Português -->
+  <div id="pt" class="tab-content active">
+    <h2>Objetivo</h2>
+    <p><b>Desenvolvedora Backend Java Sênior</b> | Interesse em Arquitetura de Sistemas, Event-Driven e Cloud</p>
+
+    <h2>Formação</h2>
+    <ul>
+      <li>Graduação em Sistemas de Informação – Faculdade Joaquim Nabuco, Recife – PE (2014)</li>
+      <li>Pós-graduação em Engenharia de Software – Faculdade Fafire, Recife – PE (2017)</li>
+    </ul>
+
+    <h2>Competências Técnicas</h2>
+    <ul>
+      <li>Linguagens: Java (Sênior), Python, Dart (Flutter), Node.js, PHP</li>
+      <li>Frameworks: Spring Boot, Micronaut, Angular, Flutter</li>
+      <li>Bancos de Dados: PostgreSQL, MySQL, MongoDB</li>
+      <li>Cloud & DevOps: AWS Essentials, Docker, Kubernetes, CI/CD, Git</li>
+      <li>Arquitetura: Microsserviços, Event-Driven Architecture, REST, SOAP</li>
+      <li>Outros: Hibernate, JPA, JWT, Testes Unitários, TDD, Swagger</li>
+    </ul>
+
+    <h2>Experiência Profissional</h2>
+    <ul>
+      <li><b>Banco Inter – Home Office</b> | Desenvolvedora Java | Jul/2022 – Atual
+        <ul>
+          <li>Desenvolvimento de aplicações backend em Micronaut.</li>
+          <li>Manutenção e evolução de sistemas críticos.</li>
+          <li>Implementação de testes unitários e integrações com AWS.</li>
+        </ul>
+      </li>
+      <li><b>Blue Technology – Recife/PE</b> | Desenvolvedora Sênior Java – PJ | Jul/2022 – Jul/2023
+        <ul>
+          <li>Desenvolvimento de aplicações em Spring Boot e Angular 9.</li>
+          <li>Implementação de Spring Security, versionamento com Flyway e testes automatizados.</li>
+        </ul>
+      </li>
+      <li><b>Capgemini – São Paulo/SP</b> | Desenvolvedora Sênior Java | Fev/2021 – Dez/2022
+        <ul>
+          <li>Criação de microserviços escaláveis para o Banco Bradesco.</li>
+          <li>Implementação de arquitetura orientada a eventos usando mensageria e filas.</li>
+        </ul>
+      </li>
+      <!-- Continue para os demais empregos -->
+    </ul>
+
+    <h2>Cursos & Aperfeiçoamento</h2>
+    <ul>
+      <li>Inglês Avançado – CCAA (2011 – 2014)</li>
+      <li>Flutter & Dart – Mobile Cross-Platform Development (Udemy, 2023)</li>
+      <li>Python for Backend & Data Processing (Alura, 2022)</li>
+      <li>Arquitetura Orientada a Eventos (EDA) e Microsserviços com Kafka/RabbitMQ (Alura, 2022)</li>
+    </ul>
+  </div>
+
+  <!-- English -->
+  <div id="en" class="tab-content">
+    <h2>Objective</h2>
+    <p><b>Senior Java Backend Developer</b> | Interested in System Architecture, Event-Driven and Cloud</p>
+
+    <h2>Education</h2>
+    <ul>
+      <li>Bachelor in Information Systems – Faculdade Joaquim Nabuco, Recife – PE (2014)</li>
+      <li>Postgraduate in Software Engineering – Faculdade Fafire, Recife – PE (2017)</li>
+    </ul>
+
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>Languages: Java (Senior), Python, Dart (Flutter), Node.js, PHP</li>
+      <li>Frameworks: Spring Boot, Micronaut, Angular, Flutter</li>
+      <li>Databases: PostgreSQL, MySQL, MongoDB</li>
+      <li>Cloud & DevOps: AWS Essentials, Docker, Kubernetes, CI/CD, Git</li>
+      <li>Architecture: Microservices, Event-Driven Architecture, REST, SOAP</li>
+      <li>Others: Hibernate, JPA, JWT, Unit Testing, TDD, Swagger</li>
+    </ul>
+
+    <h2>Professional Experience</h2>
+    <ul>
+      <li><b>Banco Inter – Home Office</b> | Java Developer | Jul/2022 – Present
+        <ul>
+          <li>Backend application development using Micronaut.</li>
+          <li>Maintenance and evolution of critical systems.</li>
+          <li>Implementation of unit tests and AWS integrations.</li>
+        </ul>
+      </li>
+      <li><b>Blue Technology – Recife/PE</b> | Senior Java Developer – PJ | Jul/2022 – Jul/2023
+        <ul>
+          <li>Development of applications in Spring Boot and Angular 9.</li>
+          <li>Implementation of Spring Security, versioning with Flyway, and automated tests.</li>
+        </ul>
+      </li>
+      <li><b>Capgemini – São Paulo/SP</b> | Senior Java Developer | Feb/2021 – Dec/2022
+        <ul>
+          <li>Creation of scalable microservices for Banco Bradesco.</li>
+          <li>Implementation of event-driven architecture using messaging and queues.</li>
+        </ul>
+      </li>
+      <!-- Continue for other jobs -->
+    </ul>
+
+    <h2>Courses & Certifications</h2>
+    <ul>
+      <li>Advanced English – CCAA (2011 – 2014)</li>
+      <li>Flutter & Dart – Mobile Cross-Platform Development (Udemy, 2023)</li>
+      <li>Python for Backend & Data Processing (Alura, 2022)</li>
+      <li>Event-Driven Architecture (EDA) and Microservices with Kafka/RabbitMQ (Alura, 2022)</li>
+    </ul>
+  </div>
+</section>
+
 <script>
-const content = {
-    en: {
-        skills: ['Java','Spring Boot','Micronaut','Java EE','Angular','React','Flutter','PostgreSQL','H2','JPA','Hibernate','Microservices','Hexagonal','CQRS','Event Sourcing','REST APIs','JWT','Docker','Kubernetes','GitHub Actions','SonarQube','Swagger','Unit Testing','Integration Testing','TDD','Kafka','RabbitMQ','LangChain4J','Spring AI', 'Python'],
-        languages: ['Portuguese: Native','English: Intermediate'],
-        education: 'Bachelor’s Degree in Information System (if applicable)<br>Faculdade Joaquim nabuco, Brazil | 2014',
-        summary: 'Software Developer with extensive experience in Java, Spring Boot, Microservices, RESTful APIs, and Frontend Development (Angular/React). Strong expertise in CQRS, JWT authentication, PostgreSQL, H2, Docker, Kubernetes,Jenkins. Skilled in full software development lifecycle, from system design and coding to testing, documentation, and deployment. Quick learner, proactive, and collaborative.',
-        experience: [
-            {title:'Full Stack Developer / Microservices Specialist', company:'Freelance / Personal Projects | 2023 – Present', tasks:[
-                'Designed and implemented microservices architecture with Spring Boot and Java.',
-                'Developed RESTful APIs integrated with Angular/React frontends.',
-                'Implemented JWT authentication, access and refresh tokens, and secure endpoints.',
-                'Built CI/CD pipelines with GitHub Actions, Docker, and Kubernetes for automated deployments.',
-                'Integrated Kafka and RabbitMQ for asynchronous communication between services.',
-                'Created RAG agents using LangChain4J and Spring AI with PostgreSQL vector embeddings.',
-                'Ensured high code quality with unit and integration tests, analyzed with SonarQube.'
-            ]},
-            {title:'Java Backend Developer', company:'Study Cases / Personal Projects | 2022 – 2023', tasks:[
-                'Implemented CQRS and event sourcing for handling business operations.',
-                'Managed databases and transactions using PostgreSQL and H2 with JPA/Hibernate.',
-                'Developed dynamic PDF reports and integrated them with REST APIs.',
-                'Implemented internationalization (i18n) for multi-language support (English & Spanish).'
-            ]}
-        ]
-    },
-    pt: {
-        skills: ['Java','Spring Boot','Micronaut','Java EE','Angular','React','Flutter','PostgreSQL','H2','JPA','Hibernate','Microservices','Hexagonal','CQRS','Event Sourcing','REST APIs','JWT','Docker','Kubernetes','GitHub Actions','CI/CD','SonarQube','Swagger','Testes Unitários','Testes de Integração','TDD','Kafka','RabbitMQ','LangChain4J','Spring AI','RAG Agents'],
-        languages: ['Português: Nativo','Inglês: Fluente','Espanhol: Intermediário'],
-        education: 'Bacharel em Sistemas de Informação (se aplicável)<br>Faculdade Joaquim Nabuvo, Brasil | 2014',
-        summary: 'Desenvolvedora de software com ampla experiência em Java, Spring Boot, Microservices, RESTful APIs e Desenvolvimento Frontend (Angular/React). Forte conhecimento em CQRS, autenticação JWT, PostgreSQL, H2, Docker, Kubernetes, Jenkins. Habilidade em todo ciclo de desenvolvimento, desde design e codificação até testes, documentação e deploy. Aprendiz rápida, proativa e colaborativa.',
-        experience: [
-            {title:'Desenvolvedora Full Stack / Especialista em Microservices', company:'Freelance / Projetos Pessoais | 2023 – Presente', tasks:[
-                'Projetou e implementou arquitetura de microservices com Spring Boot e Java.',
-                'Desenvolveu RESTful APIs integradas com frontends Angular/React.',
-                'Implementou autenticação JWT, tokens de acesso e refresh, e endpoints seguros.',
-                'Construiu pipelines CI/CD com GitHub Actions, Docker e Kubernetes para deploys automáticos.',
-                'Integração com Kafka e RabbitMQ para comunicação assíncrona entre serviços.',
-                'Criou agentes RAG usando LangChain4J e Spring AI com embeddings no PostgreSQL.',
-                'Garantiu alta qualidade de código com testes unitários e de integração, analisados pelo SonarQube.'
-            ]},
-            {title:'Desenvolvedora Backend Java', company:'Casos de Estudo / Projetos Pessoais | 2022 – 2023', tasks:[
-                'Implementou CQRS e event sourcing para operações de negócio.',
-                'Gerenciou bancos de dados e transações usando PostgreSQL e H2 com JPA/Hibernate.',
-                'Desenvolveu relatórios PDF dinâmicos e integrou com APIs REST.',
-                'Implementou internacionalização (i18n) para suporte multilíngue (Inglês & Espanhol).'
-            ]}
-        ]
-    }
-};
-
-function setLang(lang){
-    const data = content[lang];
-
-    // Skills
-    const skillsDiv = document.getElementById('skills');
-    skillsDiv.innerHTML = '';
-    data.skills.forEach(skill => {
-        const span = document.createElement('span');
-        span.textContent = skill;
-        skillsDiv.appendChild(span);
-    });
-
-    // Languages
-    const langList = document.getElementById('languages-list');
-    langList.innerHTML = '';
-    data.languages.forEach(l => {
-        const li = document.createElement('li');
-        li.textContent = l;
-        langList.appendChild(li);
-    });
-
-    // Education
-    document.getElementById('education').innerHTML = data.education;
-
-    // Summary
-    document.getElementById('summary').innerHTML = data.summary;
-
-    // Experience
-    const expDiv = document.getElementById('experience');
-    expDiv.innerHTML = '';
-    data.experience.forEach(job=>{
-        const h3 = document.createElement('h3');
-        h3.className='job-title';
-        h3.textContent = job.title;
-        const companyDiv = document.createElement('div');
-        companyDiv.className='company';
-        companyDiv.textContent = job.company;
-        const ul = document.createElement('ul');
-        job.tasks.forEach(task=>{
-            const li = document.createElement('li');
-            li.textContent = task;
-            ul.appendChild(li);
-        });
-        expDiv.appendChild(h3);
-        expDiv.appendChild(companyDiv);
-        expDiv.appendChild(ul);
-    });
-
-    // Update section titles
-    if(lang==='en'){
-        document.getElementById('skills-title').textContent='Skills';
-        document.getElementById('languages-title').textContent='Languages';
-        document.getElementById('education-title').textContent='Education';
-        document.getElementById('summary-title').textContent='Professional Summary';
-        document.getElementById('experience-title').textContent='Professional Experience';
-    } else {
-        document.getElementById('skills-title').textContent='Competências';
-        document.getElementById('languages-title').textContent='Idiomas';
-        document.getElementById('education-title').textContent='Formação';
-        document.getElementById('summary-title').textContent='Resumo Profissional';
-        document.getElementById('experience-title').textContent='Experiência Profissional';
-    }
-}
-
-// Default language
-setLang('en');
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(tc => tc.classList.remove('active'));
+    document.querySelectorAll('.tab-button').forEach(tb => tb.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    document.querySelector(`.tab-button[onclick="showTab('${tabId}')"]`).classList.add('active');
+  }
 </script>
 
 </body>
 </html>
-
