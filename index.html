@@ -1,194 +1,197 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Currículo – Camila Soares Xavier da Silva</title>
+<title>Camila Soares - CV</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Roboto', sans-serif; line-height: 1.6; background: #f0f2f5; color: #333; scroll-behavior: smooth; }
-
-  /* Layout */
-  .container { display: flex; min-height: 100vh; }
-  nav { width: 220px; background: #004080; color: #fff; padding: 30px 20px; position: fixed; height: 100%; }
-  nav h2 { margin-bottom: 30px; font-size: 1.5em; }
-  nav ul { list-style: none; }
-  nav ul li { margin-bottom: 15px; }
-  nav ul li a { color: #fff; text-decoration: none; display: block; padding: 8px; border-radius: 5px; transition: 0.3s; }
-  nav ul li a:hover, nav ul li a.active { background: #0066cc; }
-
-  main { margin-left: 240px; padding: 30px; flex: 1; }
-
-  section { margin-bottom: 50px; opacity: 0; transform: translateY(30px); transition: 0.6s ease-out; }
-  section.visible { opacity: 1; transform: translateY(0); }
-
-  h1, h2 { color: #004080; margin-bottom: 15px; }
-  h1 { font-size: 2em; }
-  h2 { border-left: 5px solid #004080; padding-left: 10px; margin-bottom: 15px; }
-
-  /* Card com hover */
-  .card { background: #fff; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: 0.3s; }
-  .card:hover { transform: translateY(-5px); box-shadow: 0 8px 15px rgba(0,0,0,0.2); }
-
-  ul { list-style: none; padding: 0; }
-  li { margin-bottom: 8px; }
-
-  .tabs { display: flex; margin-bottom: 20px; }
-  .tab-button { flex: 1; padding: 10px; cursor: pointer; background: #ddd; border: none; font-weight: bold; transition: 0.3s; }
-  .tab-button.active { background: #004080; color: #fff; }
-
-  .skills i { margin-right: 10px; color: #004080; }
-
-  .btn { display: inline-block; background: #004080; color: #fff; padding: 10px 20px; border-radius: 5px; text-decoration: none; margin-top: 10px; transition: 0.3s; }
-  .btn:hover { background: #0066cc; }
-
-  footer { text-align: center; padding: 20px; color: #555; margin-top: 50px; }
-
-  /* Grid de experiência */
-  .experience-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-
+    body { font-family: 'Roboto', Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; color: #333; }
+    .container { max-width: 900px; margin: 40px auto; background: #fff; padding: 30px; box-shadow: 0 0 15px rgba(0,0,0,0.1);}
+    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #1F4E79; padding-bottom: 10px;}
+    .header h1 { margin: 0; font-size: 28px; color: #1F4E79;}
+    .contact { text-align: right; font-size: 14px;}
+    .contact a { color: #1F4E79; text-decoration: none;}
+    .content { display: flex; margin-top: 30px;}
+    .left, .right { padding: 0 20px;}
+    .left { width: 30%; border-right: 2px solid #e0e0e0;}
+    .right { width: 70%;}
+    h2 { color: #1F4E79; font-size: 20px; margin-top: 20px; border-bottom: 2px solid #1F4E79; padding-bottom: 3px;}
+    h3 { font-size: 16px; margin-bottom: 5px;}
+    .job-title { font-weight: bold;}
+    .company { font-style: italic; color: #555; font-size: 14px; margin-bottom: 5px;}
+    ul { margin: 5px 0 15px 15px;}
+    .skills span { display: inline-block; background: #1F4E79; color: #fff; padding: 4px 8px; margin: 3px 3px 3px 0; border-radius: 4px; font-size: 12px;}
+    .languages li { margin-bottom: 5px;}
+    .icon { margin-right: 5px; color: #1F4E79;}
+    .lang-switch { margin-bottom: 15px; text-align: center;}
+    .lang-switch button { padding: 5px 10px; margin: 0 5px; cursor: pointer; border: none; border-radius: 4px; background: #1F4E79; color: #fff; font-weight: bold;}
 </style>
 </head>
 <body>
 
 <div class="container">
-  <!-- Menu lateral -->
-  <nav>
-    <h2>Camila Soares</h2>
-    <ul>
-      <li><a href="#objective" class="active">Objetivo / Objective</a></li>
-      <li><a href="#education">Formação / Education</a></li>
-      <li><a href="#skills">Competências / Skills</a></li>
-      <li><a href="#experience">Experiência / Experience</a></li>
-      <li><a href="#courses">Cursos / Courses</a></li>
-    </ul>
-    <p>
-      <a href="mailto:camilasoares1507@gmail.com" class="btn"><i class="fa fa-envelope"></i>Email</a><br>
-      <a href="https://www.linkedin.com/in/camila-soares-3475027a/" class="btn"><i class="fab fa-linkedin"></i>LinkedIn</a><br>
-      <a href="http://github.com/camila-soares" class="btn"><i class="fab fa-github"></i>GitHub</a><br>
-      <a href="curriculo.pdf" class="btn" download><i class="fa fa-download"></i>Baixar PDF / Download PDF</a>
-    </p>
-  </nav>
-
-  <main>
-    <!-- Abas de idioma -->
-    <div class="tabs">
-      <button class="tab-button active" onclick="switchLang('pt')">Português</button>
-      <button class="tab-button" onclick="switchLang('en')">English</button>
+    <!-- Language Switch -->
+    <div class="lang-switch">
+        <button onclick="setLang('en')">English</button>
+        <button onclick="setLang('pt')">Português</button>
     </div>
 
-    <!-- Português -->
-    <div id="pt">
-      <section id="objective" class="card">
-        <h2>Objetivo</h2>
-        <p><b>Desenvolvedora Backend Java Sênior</b> | Interesse em Arquitetura de Sistemas, Event-Driven e Cloud</p>
-      </section>
-
-      <section id="education" class="card">
-        <h2>Formação</h2>
-        <ul>
-          <li>Bacharel em Sistemas de Informação – Faculdade Joaquim Nabuco, Recife – PE (2014)</li>
-          <li>Pós-graduação em Engenharia de Software – Faculdade Fafire, Recife – PE (2017)</li>
-        </ul>
-      </section>
-
-      <section id="skills" class="card">
-        <h2>Competências Técnicas</h2>
-        <ul class="skills">
-          <li><i class="fab fa-java"></i>Java (Sênior)</li>
-          <li><i class="fab fa-python"></i>Python</li>
-          <li><i class="fab fa-node"></i>Node.js</li>
-          <li><i class="fas fa-mobile-alt"></i>Dart (Flutter)</li>
-          <li><i class="fab fa-php"></i>PHP</li>
-          <li><i class="fas fa-cloud"></i>Cloud & DevOps: AWS, Docker, Kubernetes, CI/CD</li>
-          <li><i class="fas fa-project-diagram"></i>Arquitetura: Microsserviços, Event-Driven, REST, SOAP</li>
-        </ul>
-      </section>
-
-      <section id="experience" class="card">
-        <h2>Experiência Profissional</h2>
-        <div class="experience-grid">
-          <div class="card">
-            <b>Banco Inter – Home Office</b><br>
-            Desenvolvedora Java | Jul/2022 – Atual
-            <ul>
-              <li>Backend em Micronaut.</li>
-              <li>Manutenção de sistemas críticos.</li>
-              <li>Testes unitários e integrações AWS.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <b>Blue Technology – Recife/PE</b><br>
-            Desenvolvedora Sênior Java – PJ | Jul/2022 – Jul/2023
-            <ul>
-              <li>Spring Boot & Angular 9.</li>
-              <li>Spring Security e testes automatizados.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <b>Capgemini – São Paulo/SP</b><br>
-            Desenvolvedora Sênior Java | Fev/2021 – Dez/2022
-            <ul>
-              <li>Microserviços escaláveis.</li>
-              <li>Arquitetura orientada a eventos.</li>
-            </ul>
-          </div>
+    <!-- Header -->
+    <div class="header">
+        <h1>Camila Soares Xavier da Silva</h1>
+        <div class="contact">
+            <div><span class="icon">📍</span> Recife, PE, Brazil</div>
+            <div><span class="icon">📞</span> +55 81 99534-6681</div>
+            <div><span class="icon">✉️</span> <a href="mailto:camilasoares1507@gmail.com">camilasoares1507@gmail.com</a></div>
+            <div><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/camila-soares-3475027a/">LinkedIn</a> | <a href="http://github.com/camila-soares">GitHub</a></div>
+            <div><span class="icon">🌍</span> Willing to travel</div>
         </div>
-      </section>
-
-      <section id="courses" class="card">
-        <h2>Cursos & Aperfeiçoamento</h2>
-        <ul>
-          <li>Inglês Avançado – CCAA (2011 – 2014)</li>
-          <li>Flutter & Dart – Mobile Cross-Platform Development (Udemy, 2023)</li>
-          <li>Python for Backend & Data Processing (Alura, 2022)</li>
-          <li>EDA e Microsserviços com Kafka/RabbitMQ (Alura, 2022)</li>
-        </ul>
-      </section>
     </div>
 
-    <!-- English -->
-    <div id="en" style="display:none;">
-      <section id="objective_en" class="card">
-        <h2>Objective</h2>
-        <p><b>Senior Java Backend Developer</b> | Interested in System Architecture, Event-Driven and Cloud</p>
-      </section>
+    <div class="content">
+        <!-- Left Column -->
+        <div class="left">
+            <h2 id="skills-title">Skills</h2>
+            <div class="skills" id="skills">
+                <!-- Dynamic skills filled by JS -->
+            </div>
 
-      <section id="education_en" class="card">
-        <h2>Education</h2>
-        <ul>
-          <li>Bachelor in Information Systems – Faculdade Joaquim Nabuco, Recife – PE (2014)</li>
-          <li>Postgraduate in Software Engineering – Faculdade Fafire, Recife – PE (2017)</li>
-        </ul>
-      </section>
+            <h2 id="languages-title">Languages</h2>
+            <ul class="languages" id="languages-list"></ul>
 
-      <section id="skills_en" class="card">
-        <h2>Technical Skills</h2>
-        <ul class="skills">
-          <li><i class="fab fa-java"></i>Java (Senior)</li>
-          <li><i class="fab fa-python"></i>Python</li>
-          <li><i class="fab fa-node"></i>Node.js</li>
-          <li><i class="fas fa-mobile-alt"></i>Dart (Flutter)</li>
-          <li><i class="fab fa-php"></i>PHP</li>
-          <li><i class="fas fa-cloud"></i>Cloud & DevOps: AWS, Docker, Kubernetes, CI/CD</li>
-          <li><i class="fas fa-project-diagram"></i>Architecture: Microservices, Event-Driven, REST, SOAP</li>
-        </ul>
-      </section>
+            <h2 id="education-title">Education</h2>
+            <p id="education"></p>
+        </div>
 
-      <section id="experience_en" class="card">
-        <h2>Professional Experience</h2>
-        <div class="experience-grid">
-          <div class="card">
-            <b>Banco Inter – Home Office</b><br>
-            Java Developer | Jul/2022 – Present
-            <ul>
-              <li>Backend development with Micronaut.</li>
-              <li>Maintenance of critical systems.</li>
-              <li>Unit tests and AWS integrations.</li>
-            </ul>
-          </div>
-          <div class="card">
-            <b>Blue Technology – Recife/PE</b><br>
-            Senior Java Developer – PJ | Jul
+        <!-- Right Column -->
+        <div class="right">
+            <h2 id="summary-title">Professional Summary</h2>
+            <p id="summary"></p>
+
+            <h2 id="experience-title">Professional Experience</h2>
+            <div id="experience"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+const content = {
+    en: {
+        skills: ['Java','Spring Boot','Micronaut','Java EE','Angular','React','Flutter','PostgreSQL','H2','JPA','Hibernate','Microservices','Hexagonal','CQRS','Event Sourcing','REST APIs','JWT','Docker','Kubernetes','GitHub Actions','CI/CD','SonarQube','Swagger','Unit Testing','Integration Testing','TDD','Kafka','RabbitMQ','LangChain4J','Spring AI','RAG Agents'],
+        languages: ['Portuguese: Native','English: Fluent','Spanish: Intermediate'],
+        education: 'Bachelor’s Degree in Computer Science (if applicable)<br>[University Name], Brazil | [Year]',
+        summary: 'Software Developer with extensive experience in Java, Spring Boot, Microservices, RESTful APIs, and Frontend Development (Angular/React). Strong expertise in CQRS, JWT authentication, PostgreSQL, H2, Docker, Kubernetes, and CI/CD pipelines. Skilled in full software development lifecycle, from system design and coding to testing, documentation, and deployment. Quick learner, proactive, and collaborative.',
+        experience: [
+            {title:'Full Stack Developer / Microservices Specialist', company:'Freelance / Personal Projects | 2023 – Present', tasks:[
+                'Designed and implemented microservices architecture with Spring Boot and Java.',
+                'Developed RESTful APIs integrated with Angular/React frontends.',
+                'Implemented JWT authentication, access and refresh tokens, and secure endpoints.',
+                'Built CI/CD pipelines with GitHub Actions, Docker, and Kubernetes for automated deployments.',
+                'Integrated Kafka and RabbitMQ for asynchronous communication between services.',
+                'Created RAG agents using LangChain4J and Spring AI with PostgreSQL vector embeddings.',
+                'Ensured high code quality with unit and integration tests, analyzed with SonarQube.'
+            ]},
+            {title:'Java Backend Developer', company:'Study Cases / Personal Projects | 2022 – 2023', tasks:[
+                'Implemented CQRS and event sourcing for handling business operations.',
+                'Managed databases and transactions using PostgreSQL and H2 with JPA/Hibernate.',
+                'Developed dynamic PDF reports and integrated them with REST APIs.',
+                'Implemented internationalization (i18n) for multi-language support (English & Spanish).'
+            ]}
+        ]
+    },
+    pt: {
+        skills: ['Java','Spring Boot','Micronaut','Java EE','Angular','React','Flutter','PostgreSQL','H2','JPA','Hibernate','Microservices','Hexagonal','CQRS','Event Sourcing','REST APIs','JWT','Docker','Kubernetes','GitHub Actions','CI/CD','SonarQube','Swagger','Testes Unitários','Testes de Integração','TDD','Kafka','RabbitMQ','LangChain4J','Spring AI','RAG Agents'],
+        languages: ['Português: Nativo','Inglês: Fluente','Espanhol: Intermediário'],
+        education: 'Bacharel em Ciência da Computação (se aplicável)<br>[Nome da Universidade], Brasil | [Ano]',
+        summary: 'Desenvolvedora de software com ampla experiência em Java, Spring Boot, Microservices, RESTful APIs e Desenvolvimento Frontend (Angular/React). Forte conhecimento em CQRS, autenticação JWT, PostgreSQL, H2, Docker, Kubernetes e pipelines CI/CD. Habilidade em todo ciclo de desenvolvimento, desde design e codificação até testes, documentação e deploy. Aprendiz rápida, proativa e colaborativa.',
+        experience: [
+            {title:'Desenvolvedora Full Stack / Especialista em Microservices', company:'Freelance / Projetos Pessoais | 2023 – Presente', tasks:[
+                'Projetou e implementou arquitetura de microservices com Spring Boot e Java.',
+                'Desenvolveu RESTful APIs integradas com frontends Angular/React.',
+                'Implementou autenticação JWT, tokens de acesso e refresh, e endpoints seguros.',
+                'Construiu pipelines CI/CD com GitHub Actions, Docker e Kubernetes para deploys automáticos.',
+                'Integração com Kafka e RabbitMQ para comunicação assíncrona entre serviços.',
+                'Criou agentes RAG usando LangChain4J e Spring AI com embeddings no PostgreSQL.',
+                'Garantiu alta qualidade de código com testes unitários e de integração, analisados pelo SonarQube.'
+            ]},
+            {title:'Desenvolvedora Backend Java', company:'Casos de Estudo / Projetos Pessoais | 2022 – 2023', tasks:[
+                'Implementou CQRS e event sourcing para operações de negócio.',
+                'Gerenciou bancos de dados e transações usando PostgreSQL e H2 com JPA/Hibernate.',
+                'Desenvolveu relatórios PDF dinâmicos e integrou com APIs REST.',
+                'Implementou internacionalização (i18n) para suporte multilíngue (Inglês & Espanhol).'
+            ]}
+        ]
+    }
+};
+
+function setLang(lang){
+    const data = content[lang];
+
+    // Skills
+    const skillsDiv = document.getElementById('skills');
+    skillsDiv.innerHTML = '';
+    data.skills.forEach(skill => {
+        const span = document.createElement('span');
+        span.textContent = skill;
+        skillsDiv.appendChild(span);
+    });
+
+    // Languages
+    const langList = document.getElementById('languages-list');
+    langList.innerHTML = '';
+    data.languages.forEach(l => {
+        const li = document.createElement('li');
+        li.textContent = l;
+        langList.appendChild(li);
+    });
+
+    // Education
+    document.getElementById('education').innerHTML = data.education;
+
+    // Summary
+    document.getElementById('summary').innerHTML = data.summary;
+
+    // Experience
+    const expDiv = document.getElementById('experience');
+    expDiv.innerHTML = '';
+    data.experience.forEach(job=>{
+        const h3 = document.createElement('h3');
+        h3.className='job-title';
+        h3.textContent = job.title;
+        const companyDiv = document.createElement('div');
+        companyDiv.className='company';
+        companyDiv.textContent = job.company;
+        const ul = document.createElement('ul');
+        job.tasks.forEach(task=>{
+            const li = document.createElement('li');
+            li.textContent = task;
+            ul.appendChild(li);
+        });
+        expDiv.appendChild(h3);
+        expDiv.appendChild(companyDiv);
+        expDiv.appendChild(ul);
+    });
+
+    // Update section titles
+    if(lang==='en'){
+        document.getElementById('skills-title').textContent='Skills';
+        document.getElementById('languages-title').textContent='Languages';
+        document.getElementById('education-title').textContent='Education';
+        document.getElementById('summary-title').textContent='Professional Summary';
+        document.getElementById('experience-title').textContent='Professional Experience';
+    } else {
+        document.getElementById('skills-title').textContent='Competências';
+        document.getElementById('languages-title').textContent='Idiomas';
+        document.getElementById('education-title').textContent='Formação';
+        document.getElementById('summary-title').textContent='Resumo Profissional';
+        document.getElementById('experience-title').textContent='Experiência Profissional';
+    }
+}
+
+// Default language
+setLang('en');
+</script>
+
+</body>
+</html>
