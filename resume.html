@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Camila Soares — Currículo / Resume (PT / EN)</title>
+  <style>
+    /* Paleta: roxo (#5D3FD3) e cinza */
+    :root{
+      --purple: #5D3FD3;
+      --dark: #2b2b2b;
+      --muted: #6b6b6b;
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --accent-bg: #f0ecfb;
+      --maxw: 900px;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+      background: linear-gradient(180deg, var(--bg) 0%, #ffffff 100%);
+      color: var(--dark);
+      margin: 0;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+    .container{
+      width: 100%;
+      max-width: var(--maxw);
+    }
+    .card{
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: 0 8px 30px rgba(45,50,80,0.08);
+      overflow: hidden;
+    }
+    header{
+      background: linear-gradient(90deg, rgba(93,63,211,0.12), rgba(93,63,211,0.04));
+      padding: 20px 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 16px;
+    }
+    .title{
+      display:flex;
+      flex-direction:column;
+    }
+    .name{
+      font-size:20px;
+      font-weight:700;
+      color:var(--purple);
+      margin:0;
+    }
+    .role{
+      margin:4px 0 0 0;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .meta{
+      text-align:right;
+      font-size:13px;
+      color:var(--muted);
+    }
+    .lang-switch{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .lang-btn{
+      border:1px solid rgba(0,0,0,0.06);
+      background:transparent;
+      padding:8px 12px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+      color:var(--purple);
+    }
+    .lang-btn.active{
+      background:var(--purple);
+      color:white;
+      box-shadow: 0 4px 14px rgba(93,63,211,0.18);
+    }
+
+    main{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      padding: 22px;
+    }
+
+    section{
+      padding: 12px 6px;
+    }
+    .summary{
+      background:var(--accent-bg);
+      border-left:6px solid var(--purple);
+      padding:12px 16px;
+      border-radius:8px;
+    }
+    h2{
+      margin: 0 0 10px 0;
+      color: var(--purple);
+      font-size:14px;
+    }
+    p, li{
+      color:var(--dark);
+      line-height:1.5;
+      font-size:13px;
+    }
+    ul { margin: 6px 0 12px 18px; padding:0; }
+    .two-cols{
+      display:grid;m
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .experience .job{
+      margin-bottom:12px;
+      padding:10px;
+      border-radius:8px;
+      background: linear-gradient(180deg, #fff 0%, #fbfbff 100%);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .job .company{
+      font-weight:700;
+      color:var(--dark);
+      margin-bottom:6px;
+    }
+    .job .period{
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+    .skills{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+    .skill-badge{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(93,63,211,0.08);
+      color:var(--purple);
+      font-size:12px;
+      margin:4px 6px 4px 0;
+    }
+    footer{
+      padding: 16px 24px;
+      border-top:1px dashed rgba(0,0,0,0.04);
+      font-size:12px;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    /* Mobile */
+    @media (max-width:720px){
+      .two-cols{ grid-template-columns: 1fr; }
+      header{ flex-direction:column; align-items:flex-start; gap:12px }
+      .meta{text-align:left}
+      .lang-switch{align-self:flex-end}
+    }
+    /* Print friendly */
+    @media print{
+      body{padding:0}
+      header{background: none !important}
+      .lang-switch{display:none}
+      .card{box-shadow:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card" role="document" aria-label="Currículo bilíngue de Camila Soares">
+      <header>
+        <div class="title" aria-hidden="false">
+          <div class="name">Camila Soares</div>
+          <div class="role">Desenvolvedora Java Sênior | Arquitetura e Soluções Back-End</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;">
+          <div class="meta">
+            Recife - PE<br>
+            Disponibilidade para viagens / mudança de cidade
+          </div>
+
+          <div class="lang-switch" role="tablist" aria-label="Language switch">
+            <button class="lang-btn active" id="ptBtn" role="tab" aria-selected="true" onclick="showLang('pt')">Português</button>
+            <button class="lang-btn" id="enBtn" role="tab" aria-selected="false" onclick="showLang('en')">English</button>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <!-- PORTUGUÊS -->
+        <section id="pt" role="tabpanel">
+          <div class="summary" aria-labelledby="Resumo">
+            <h2>Resumo Profissional</h2>
+            <p>
+              Profissional com mais de 5 anos de experiência no desenvolvimento de sistemas corporativos, microsserviços e integrações com Oracle.
+              Especialista em backend Java, arquitetura de sistemas e modernização de aplicações com foco em desempenho, qualidade de código e escalabilidade.
+            </p>
+          </div>
+
+          <div class="two-cols" style="margin-top:14px;">
+            <div>
+              <h2>Formação Acadêmica</h2>
+              <p><strong>Graduação em Sistemas de Informação</strong> — Faculdade Joaquim Nabuco, Recife - PE (2014)</p>
+              <p><strong>Pós-graduação em Engenharia de Software</strong> — Faculdade Fafire, Recife - PE (2017)</p>
+
+              <h2 style="margin-top:12px;">Competências Técnicas</h2>
+              <div class="skills" aria-hidden="false">
+                <div>
+                  <span class="skill-badge">Java</span>
+                  <span class="skill-badge">Spring Boot</span>
+                  <span class="skill-badge">Micronaut</span>
+                  <span class="skill-badge">Hibernate / JPA</span>
+                </div>
+                <div>
+                  <span class="skill-badge">Oracle DB</span>
+                  <span class="skill-badge">Oracle Forms</span>
+                  <span class="skill-badge">Tomcat</span>
+                  <span class="skill-badge">Struts / JSP</span>
+                </div>
+                <div>
+                  <span class="skill-badge">Flutter</span>
+                  <span class="skill-badge">Python</span>
+                  <span class="skill-badge">Docker</span>
+                  <span class="skill-badge">AWS</span>
+                </div>
+                <div>
+                  <span class="skill-badge">TDD</span>
+                  <span class="skill-badge">CI/CD</span>
+                  <span class="skill-badge">Clean Code</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h2>Experiência Profissional</h2>
+
+              <div class="experience">
+                <div class="job">
+                  <div class="company">MV Informática — Desenvolvedora Java Sênior</div>
+                  <div class="period">Jan/2024 - Atual • Recife/PE</div>
+                  <ul>
+                    <li>Desenvolvimento e manutenção de sistemas corporativos em Java (Spring Boot e Oracle Forms).</li>
+                    <li>Integrações com banco de dados Oracle, servidor Tomcat e módulos legados.</li>
+                    <li>Modernização de aplicações com Struts, JSP e componentes em Flutter e Python.</li>
+                    <li>Criação de rotinas batch, otimização de queries SQL e suporte a aplicações críticas.</li>
+                  </ul>
+                </div>
+
+                <div class="job">
+                  <div class="company">Banco Inter — Desenvolvedora Java</div>
+                  <div class="period">Jul/2022 - Dez/2023 • Home Office</div>
+                  <ul>
+                    <li>Desenvolvimento backend em Micronaut; manutenção e evolução de sistemas críticos.</li>
+                    <li>Implementação de testes unitários e integrações com AWS.</li>
+                  </ul>
+                </div>
+
+                <div class="job">
+                  <div class="company">Blue Technology — Desenvolvedora Sênior Java (PJ)</div>
+                  <div class="period">Jul/2022 - Jul/2023 • Recife/PE</div>
+                  <ul>
+                    <li>Desenvolvimento em Spring Boot com front Angular 9.</li>
+                    <li>Spring Security, Flyway e testes automatizados; integração de APIs.</li>
+                  </ul>
+                </div>
+
+                <div class="job">
+                  <div class="company">Capgemini — Desenvolvedora Sênior Java</div>
+                  <div class="period">Fev/2021 - Dez/2022 • São Paulo/SP</div>
+                  <ul>
+                    <li>Criação de microserviços escaláveis e arquitetura orientada a eventos (mensageria).</li>
+                    <li>Desenvolvimento com TDD, Docker e integração contínua.</li>
+                  </ul>
+                </div>
+
+                <div class="job">
+                  <div class="company">Alelo — Desenvolvedora FullStack</div>
+                  <div class="period">Jul/2020 - Fev/2021 • Barueri/SP</div>
+                  <ul>
+                    <li>Desenvolvimento de sistema de gestão de vendas com Spring Boot e Angular.</li>
+                    <li>Aplicação de TDD e implementação de testes automatizados.</li>
+                  </ul>
+                </div>
+
+                <div class="job">
+                  <div class="company">Cast Group — Analista de Sistemas Pleno</div>
+                  <div class="period">Jan/2019 - Jul/2020 • Recife/PE</div>
+                  <ul>
+                    <li>Desenvolvimento de aplicações web, manutenção de batchs e integração contínua.</li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ENGLISH -->
+        <section id="en" role="tabpanel" hidden>
+          <div class="summary" aria-labelledby="Summary">
+            <h2>Professional Summary</h2>
+            <p>
+              Professional with over 5 years of experience developing corporate systems, microservices and Oracle integrations.
+              Specialist in Java backend, system architecture and application modernization, focused on performance, code quality and scalability.
+            </p>
+          </div>
+
+          <div class="two-cols" style="margin-top:14px;">
+            <div>
+              <h2>Education</h2>
+              <p><strong>Bachelor's in Information Systems</strong> — Faculdade Joaquim Nabuco, Recife - PE (2014)</p>
+              <p><strong>Postgraduate in Software Engineering</strong> — Faculdade Fafire, Recife - PE (2017)</p>
+
+              <h2 style="margin-top:12px;">Technical Skills</h2>
+              <div class="skills">
+                <div>
+                  <span class="skill-badge">Java</span>
+                  <span class="skill-badge">Spring Boot</span>
+                  <span class="skill-badge">Micronaut</span>
+                  <span class="skill-badge">Hibernate / JPA</span>
+                </div>
+                <div>
+                  <span class="skill-badge">Oracle DB</span>
+                  <span class="skill-badge">Oracle Forms</span>
+                  <span class="skill-badge">Tomcat</span>
+                  <span class="skill-badge">Struts / JSP</span>
+                </div>
+                <div>
+                  <span class="skill-badge">Flutter</span>
+                  <span class="skill-badge">Python</span>
+                  <span class="skill-badge">Docker</span>
+                  <span class="skill-badge">AWS</span>
+                </div>
+                <div>
+                  <span class="skill-badge">TDD</span>
+                  <span class="skill-badge">CI/CD</span>
+                  <span class="skill-badge">Clean Code</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h2>Professional Experience</h2>
+
+              <div class="experience">
+                <div class="job">
+                  <div class="company">MV Informática — Senior Java Developer</div>
+                  <div class="period">Jan/2024 - Present • Recife/PE</div>
+                  <ul>
+                    <li>Develop and maintain corporate systems in Java (Spring Boot and Oracle Forms).</li>
+                    <li>Integrations with Oracle DB, Tomcat server and legacy modules.</li>
+                    <li>Modernization of applications using Struts, JSP and components in Flutter and Python.</li>
+                    <li>Create batch routines, optimize SQL queries and support critical applications.</li>
+                  </ul>
+                </div>
+
+                <div class="job">
+                  <div class="company">Banco Inter — Java Developer</div>
+                  <div class="period">Jul/2022 - Dec/2023 • Remote</div>
+                  <ul>
+                    <li>Backend development using Micronaut; maintenance and evolution of critical systems.</li>
+                    <li>Implemented unit tests and AWS integrations.</li>
+                  </ul>
+                </div>
+
+                <div class="job">
+                  <div class="company">Blue Technology — Senior Java Developer (Contract)</div>
+                  <div class="period">Jul/2022 - Jul/2023 • Recife/PE</div>
+                  <ul>
+                    <li>Development with Spring Boot and Angular 9.</li>
+                    <li>Implemented Spring Security, Flyway and automated tests; API integrations.</li>
+                  </ul>
+                </div>
+
+                <div class="job">
+                  <div class="company">Capgemini — Senior Java Developer</div>
+                  <div class="period">Feb/2021 - Dec/2022 • São Paulo/SP</div>
+                  <ul>
+                    <li>Built scalable microservices and event-driven architectures (messaging).</li>
+                    <li>Worked using TDD, Docker and CI/CD practices.</li>
+                  </ul>
+                </div>
+
+                <div class="job">
+                  <div class="company">Alelo — FullStack Developer</div>
+                  <div class="period">Jul/2020 - Feb/2021 • Barueri/SP</div>
+                  <ul>
+                    <li>Developed sales management system using Spring Boot and Angular.</li>
+                    <li>Applied TDD and automated testing practices.</li>
+                  </ul>
+                </div>
+
+                <div class="job">
+                  <div class="company">Cast Group — Systems Analyst (Mid)</div>
+                  <div class="period">Jan/2019 - Jul/2020 • Barueri/SP</div>
+                  <ul>
+                    <li>Web application development, batch maintenance and continuous integration.</li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </section>
+
+      </main>
+
+      <footer>
+        <div style="text-align:right">
+          Email: <em>camilasoares1507@gmail.com</em> • LinkedIn: <em>https://www.linkedin.com/in/camila-soares-3475027a</em>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function showLang(lang){
+      const ptBtn = document.getElementById('ptBtn');
+      const enBtn = document.getElementById('enBtn');
+      const pt = document.getElementById('pt');
+      const en = document.getElementById('en');
+
+      if(lang === 'pt'){
+        pt.hidden = false;
+        en.hidden = true;
+        ptBtn.classList.add('active');
+        enBtn.classList.remove('active');
+        ptBtn.setAttribute('aria-selected','true');
+        enBtn.setAttribute('aria-selected','false');
+      }else{
+        pt.hidden = true;
+        en.hidden = false;
+        enBtn.classList.add('active');
+        ptBtn.classList.remove('active');
+        enBtn.setAttribute('aria-selected','true');
+        ptBtn.setAttribute('aria-selected','false');
+      }
+    }
+
+    // Optional: remember user's last choice
+    const saved = localStorage.getItem('resume_lang');
+    if(saved) showLang(saved);
+    document.getElementById('ptBtn').addEventListener('click', ()=> localStorage.setItem('resume_lang','pt'));
+    document.getElementById('enBtn').addEventListener('click', ()=> localStorage.setItem('resume_lang','en'));
+  </script>
+</body>
+</html>
+
