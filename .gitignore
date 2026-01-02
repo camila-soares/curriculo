@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+backend/.env
+backend/token.json
+backend/app.db
+
+*.sqlite
+*.db
